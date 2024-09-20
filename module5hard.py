@@ -87,13 +87,13 @@ class UrTube:
                 if video.adult_mode and self.current_user.age < 18:
                     print("Вам нет 18 лет, пожалуйста покиньте страницу")
                     return
-            for i in range(video.time_now + 1, video.duration + 1):
-                print(i, end=' ')
-                time.sleep(1)
-                video.time_now = i
-            print("Конец видео")
-            video.time_now = 0
-            return
+                for i in range(video.time_now + 1, video.duration + 1):
+                    print(i, end=' ')
+                    time.sleep(1)
+                    video.time_now = i
+                print("Конец видео")
+                video.time_now = 0
+                return
         print("Видео не найдено")
 
 
@@ -110,7 +110,7 @@ class UrTube:
 После воспроизведения нужно выводить: "Конец видео"'''
 
 ur = UrTube()
-v1 = Video('Лучший язык программирования 2024 года', 11)
+v1 = Video('Лучший язык программирования 2024 года', 200)
 v2 = Video('Для чего девушкам парень программист?', 10, adult_mode=True)
 
 # Добавление видео
